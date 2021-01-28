@@ -19,14 +19,23 @@ public class Game {
     private Text score;
     private Text textScore;
 
+    private Picture picture;
+
     private Player player;
     private Controls controls;
     private CollisionDetector collisionDetector;
 
     public static int points;
+    public int healthIndex;
+
+    private boolean gameIsEnd = false;
 
 
     public void init(){
+
+
+        new Start();
+
 
         grid = new Grid();
         controls = new Controls();
@@ -36,28 +45,33 @@ public class Game {
         bulletsList = new LinkedList<>();
 
         player = GameObjectFactory.createPlayer();
-
         controls.setPlayer(player);
+        controls.setGame(this);
         controls.init();
 
+        healthIndex = 0;
 
         start();
 
     }
 
-    private void start(){
+
+    public void start(){
+
 
         int iterator = 0;
         int number = 0;
 
         drowScore();
 
-        while (true){
+
+        while (!gameIsEnd){
 
             drowPoint();
+            drawHealth();
 
             if(iterator == number){
-                createEnemys();
+                createEnemies();
                 number += 30;
             }
             iterator++;
@@ -67,27 +81,36 @@ public class Game {
 
 
             try {
-                Thread.sleep(20);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
             moveEnemy();
             moveBullets();
+
+            upDateLives();
             score.delete();
 
+            checkPlayer();
+            checKGame();
 
 
         }
+        new GameOver();
+
+
     }
 
-    private void createEnemys(){
+
+    private void createEnemies(){
 
         for(int i = 0; i < 10; i++){
             enemyList.add(GameObjectFactory.createEnemy());
         }
 
     }
+
 
     private void moveEnemy(){
 
@@ -97,12 +120,16 @@ public class Game {
             enemy.setRow(enemy.getRow() + 20);
             enemy.getPicture().translate(0,20);
 
+            collisionDetector.checkCollision2(enemy, player);
+
             if(enemy.getRow()  > 730){
                 enemy.getRectangle().delete();
                 enemy.getPicture().delete();
             }
         }
     }
+
+
     private void moveBullets(){
 
         for(Bullets bullet : bulletsList){
@@ -129,6 +156,8 @@ public class Game {
         textScore.draw();
     }
 
+
+
     private void drowPoint(){
 
         score = new Text(65,35, String.valueOf(points));
@@ -140,11 +169,70 @@ public class Game {
 
 
 
+    private void drawHealth(){
+
+        for(Picture playerHealth : player.getLives()){
+            playerHealth.draw();
+        }
+    }
+
+
+    private void checkPlayer(){
+
+        if(healthIndex > 4){
+            player.setDead(true);
+        }
+        gameIsEnd = player.isDead();
+    }
+
+    private void upDateLives(){
+
+        if(player.getHealth() <= 0){
+            System.out.println("tetse");
+            player.getLives()[healthIndex].delete();
+            player.setHealth(10);
+            healthIndex++;
+        }
+    }
+
+
+    private void checKGame(){
+
+        if(gameIsEnd){
+
+            player.getRectangle().delete();
+            player.getPicture().delete();
+
+            for(Enemy enemy : enemyList){
+                enemy.getRectangle().delete();
+                enemy.getPicture().delete();
+            }
+            enemyList.clear();
+
+
+            for (Bullets bullet : bulletsList){
+                bullet.getBullet().delete();
+                bullet.getBulletPic().delete();
+            }
+            bulletsList.clear();
+
+            gameIsEnd = false;
+
+
+        }
+    }
+
+
     public static int getPoints() {
         return points;
     }
 
+
     public static void setPoints(int points) {
         Game.points = points;
+    }
+
+    public Picture getPicture() {
+        return picture;
     }
 }

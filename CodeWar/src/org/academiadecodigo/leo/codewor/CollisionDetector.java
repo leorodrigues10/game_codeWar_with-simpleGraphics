@@ -2,6 +2,7 @@ package org.academiadecodigo.leo.codewor;
 
 import org.academiadecodigo.leo.codewor.gameObject.Bullets;
 import org.academiadecodigo.leo.codewor.gameObject.Enemy;
+import org.academiadecodigo.leo.codewor.gameObject.Player;
 
 import java.util.List;
 
@@ -23,7 +24,14 @@ public class CollisionDetector {
             }
         }
 
+    }
 
+    public void checkCollision2(Enemy enemy, Player player){
+
+        if(player.getCol() == enemy.getCol() && player.getRow() == enemy.getRow()){
+            player.suffer();
+            enemy.getRectangle().delete();
+        }
 
     }
 }

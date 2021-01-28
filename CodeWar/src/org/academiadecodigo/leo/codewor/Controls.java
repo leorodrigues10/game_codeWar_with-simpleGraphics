@@ -10,6 +10,7 @@ public class Controls implements KeyboardHandler {
 
     private Keyboard keyboard;
     private Player player;
+    Game game;
 
 
     public void init(){
@@ -38,6 +39,7 @@ public class Controls implements KeyboardHandler {
         keyboard.addEventListener(pressLeft);
         keyboard.addEventListener(pressRight);
 
+
     }
 
 
@@ -63,11 +65,16 @@ public class Controls implements KeyboardHandler {
             case KeyboardEvent.KEY_RIGHT:
                 player.moveRight();
                 break;
+
         }
     }
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
 
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 }
