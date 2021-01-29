@@ -95,10 +95,6 @@ public class Player extends GameObject{
         return dead;
     }
 
-    public void setLives(Picture[] lives) {
-        this.lives = lives;
-    }
-
     public Picture getPicture() {
         return picture;
     }

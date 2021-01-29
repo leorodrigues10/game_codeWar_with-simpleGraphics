@@ -27,7 +27,6 @@ public class GameObject {
         return col;
     }
 
-
     public int getRow() {
         return row;
     }

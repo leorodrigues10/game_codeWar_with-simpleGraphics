@@ -14,6 +14,8 @@ public class Start implements KeyboardHandler{
     private boolean started = false;
     private boolean show = false;
 
+    private Sound sound;
+
 
 
     public Start(){
@@ -22,6 +24,9 @@ public class Start implements KeyboardHandler{
         picture.draw();
 
         start = new Picture(170, 600,"resources/press.png");
+
+        sound = new Sound("/resources/audio/mission2.wav");
+        sound.play(true);
 
         init();
 
@@ -55,6 +60,7 @@ public class Start implements KeyboardHandler{
 
         }
         picture.delete();
+        sound.stop();
 
     }
 

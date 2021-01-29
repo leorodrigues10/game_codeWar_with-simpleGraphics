@@ -40,6 +40,7 @@ public class Game {
         grid = new Grid();
         controls = new Controls();
         collisionDetector = new CollisionDetector();
+        sound = new Sound("/resources/audio/mission.wav");
 
         enemyList = new LinkedList<>();
         bulletsList = new LinkedList<>();
@@ -63,12 +64,14 @@ public class Game {
         int number = 0;
 
         drowScore();
+        drawHealth();
 
+        sound.play(true);
 
         while (!gameIsEnd){
 
             drowPoint();
-            drawHealth();
+
 
             if(iterator == number){
                 createEnemies();
@@ -89,16 +92,17 @@ public class Game {
             moveEnemy();
             moveBullets();
 
+            collisionDetector.checkCollision2(enemyList, player);
+
             upDateLives();
             score.delete();
 
             checkPlayer();
-            checKGame();
+            checkGame();
 
 
         }
         new GameOver();
-
 
     }
 
@@ -120,7 +124,7 @@ public class Game {
             enemy.setRow(enemy.getRow() + 20);
             enemy.getPicture().translate(0,20);
 
-            collisionDetector.checkCollision2(enemy, player);
+          //  collisionDetector.checkCollision2(enemy, player);
 
             if(enemy.getRow()  > 730){
                 enemy.getRectangle().delete();
@@ -140,7 +144,7 @@ public class Game {
 
             collisionDetector.checkCollision(bullet, enemyList);
 
-            if(bullet.getRow() < 10){
+            if(bullet.getRow() < 20){
                 bullet.getBullet().delete();
                 bullet.getBulletPic().delete();
 
@@ -154,6 +158,7 @@ public class Game {
         textScore.setColor(Color.WHITE);
         textScore.grow(15, 12);
         textScore.draw();
+
     }
 
 
@@ -185,18 +190,22 @@ public class Game {
         gameIsEnd = player.isDead();
     }
 
+
+
     private void upDateLives(){
 
         if(player.getHealth() <= 0){
-            System.out.println("tetse");
+
             player.getLives()[healthIndex].delete();
             player.setHealth(10);
             healthIndex++;
+
         }
     }
 
 
-    private void checKGame(){
+
+    private void checkGame(){
 
         if(gameIsEnd){
 
@@ -216,7 +225,7 @@ public class Game {
             }
             bulletsList.clear();
 
-            gameIsEnd = false;
+           // gameIsEnd = false;
 
 
         }

@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c455ecf-6c4e-4ea2-9753-8fa7dffcfa74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/simple_graphics.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/health.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/over.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/GameOver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeWar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CodeWar.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/1.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/audio/1.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/2.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/audio/2.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/aud1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/resources/audio/aud1.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/audio/aud2.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/audio/aud2.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/CollisionDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/CollisionDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/Controls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/Controls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/gameObject/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor/gameObject/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="2c455ecf-6c4e-4ea2-9753-8fa7dffcfa74" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,14 +31,18 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gant" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rodrigues\IdeaProjects\CodeWar\src" />
+      <recent name="C:\Users\rodrigues\IdeaProjects\CodeWar\resources\audio" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/src/org/academiadecodigo/leo/codewor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rodrigues\IdeaProjects\CodeWar\resources" />
       <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -107,6 +90,7 @@
       <updated>1611830049869</updated>
       <workItem from="1611830051148" duration="5129000" />
       <workItem from="1611840993933" duration="12061000" />
+      <workItem from="1611883019377" duration="1249000" />
     </task>
     <servers />
   </component>

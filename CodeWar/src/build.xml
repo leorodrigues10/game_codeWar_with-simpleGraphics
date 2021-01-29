@@ -26,6 +26,7 @@
         <javac srcdir="${src.dir}" destdir="${classes.dir}">
             <classpath refid="classpath"/>
         </javac>
+
     </target>
 
     <!-- Creates a JAR file -->
